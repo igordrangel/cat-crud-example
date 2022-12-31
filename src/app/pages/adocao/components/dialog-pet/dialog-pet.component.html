@@ -1,0 +1,25 @@
+<form (submit)="$event.preventDefault();form.submit()">
+  <cat-dialog>
+    <div header>
+      <i
+        [ngClass]="{
+          'fa-pen': pet,
+          'fa-circle-plus': !pet
+        }"
+        class="fa-solid mr-8">
+      </i>
+      {{(pet ? 'Editar' : 'Incluir') + ' Animal'}}
+    </div>
+    <div content>
+      <cat-form #form [config]="petForm"></cat-form>
+    </div>
+    <div actions>
+      <button (click)="dialogRef.close()" type="button" class="btn btn-secondary btn-sm mr-8">
+        Cancelar
+      </button>
+      <button type="submit" class="btn btn-primary btn-sm">
+        Salvar
+      </button>
+    </div>
+  </cat-dialog>
+</form>
