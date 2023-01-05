@@ -1,29 +1,32 @@
 import { Component } from '@angular/core';
-import { CatLogotypeApp, CatTokenService } from '@catrx/ui/core';
+import { CatLogotypeApp } from '@catrx/ui/core';
 import { CatFormModule, CatFormService } from '@catrx/ui/form';
+import { CatPrimaryButtonComponent } from '@catrx/ui/button';
 import {
   CatDynamicComponentDataInterface,
   CatDynamicComponentModule,
 } from '@catrx/ui/dynamic-component';
+import { CatFormBase } from '@catrx/ui/common';
+import { UserService } from './shared/services/user/user.service';
+import { Credentials } from './shared/services/user/user.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   template: `
-    <div class="login-content">
-      <cat-dynamic-component
-        class="logotype"
-        [component]="data"
-      ></cat-dynamic-component>
+    <form (submit)="submit($event)">
+      <cat-dynamic-component class="logotype" [component]="data">
+      </cat-dynamic-component>
 
-      <cat-form #form [config]="loginFormConfig"></cat-form>
+      <cat-form #form [config]="loginFormConfig"> </cat-form>
 
-      <button (click)="form.submit()" class="w-100 text-center btn btn-primary">
+      <cat-primary-button type="submit" [showLoader]="submitLoader$ | async" class="w-100">
         Entrar
-      </button>
-    </div>
+      </cat-primary-button>
+    </form>
   `,
   styles: [
     `
-      .login-content {
+      form {
         width: 250px;
       }
       .logotype {
@@ -35,22 +38,32 @@ import {
     `,
   ],
   standalone: true,
-  imports: [CatDynamicComponentModule, CatFormModule],
+  imports: [
+    CommonModule,
+    CatDynamicComponentModule,
+    CatFormModule,
+    CatPrimaryButtonComponent,
+  ],
 })
-export class LoginComponent implements CatDynamicComponentDataInterface {
+export class LoginComponent
+  extends CatFormBase
+  implements CatDynamicComponentDataInterface
+{
   data: CatLogotypeApp;
 
   loginFormConfig = this.formService
-    .build()
-    .text('Usuário', 'login', (builder) => builder.setRequired().generate())
+    .build<Credentials>()
+    .text('Usuário', 'username', (builder) => builder.setRequired().generate())
     .password('Senha', 'password', (builder) =>
       builder.setRequired().generate()
     )
-    .onSubmit((data) => this.tokenService.setDecodedToken(data, 'demo'))
+    .onSubmit((data) => this.userService.auth(data))
     .generate();
 
   constructor(
     private formService: CatFormService,
-    private tokenService: CatTokenService
-  ) {}
+    private userService: UserService
+  ) {
+    super();
+  }
 }

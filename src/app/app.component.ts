@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
 import { CatAppService } from '@catrx/ui/core';
-import { UserService } from './shared/services/user/user.service';
 import { LoginComponent } from './login.component';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
-  appConfig = this.appService
-    .build('Pet Shop', {
+  appConfig = this.catappService
+    .build('PetShop', {
       autoAuth: true,
+      startedPage: 'adoption',
       jwt: {
         loginComponent: LoginComponent,
       },
-      onAuth: (decodedToken) => this.userService.getMenu(decodedToken),
+      onAuth: (decodedToken) => this.appService.getMenu(decodedToken),
     })
     .setLogotype({
       default: '../assets/logotype.svg',
@@ -24,7 +25,7 @@ export class AppComponent {
     .generate();
 
   constructor(
-    private appService: CatAppService,
-    private userService: UserService
+    private catappService: CatAppService,
+    private appService: AppService
   ) {}
 }

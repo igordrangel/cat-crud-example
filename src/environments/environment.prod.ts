@@ -1,6 +1,6 @@
-import { CatEnvironmentInterface } from '@catrx/ui/core';
+import { CatEnvironmentInterface } from '@catrx/ui/common';
 
 export const environment: CatEnvironmentInterface = {
   production: true,
-  storageTokenName: 'galeria-gatos-token',
+  storageTokenName: 'cat-crud-example-token',
 };

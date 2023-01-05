@@ -33,7 +33,14 @@
               "./node_modules/@catrx/ui/prebuilt-theme/prebuilt-theme.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "@koalarx/utils",
+              "@koalarx/utils/operators/delay",
+              "@koalarx/utils/operators/string",
+              "jwt-encode",
+              "@koalarx/utils/operators"
+            ]
           },
           "configurations": {
             "production": {

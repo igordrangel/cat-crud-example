@@ -2,13 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'adocao',
-    loadChildren: () =>
-      import('./pages/adocao/page-adocao.module').then(
-        (m) => m.PageAdocaoModule
-      ),
-  },
+  {path: 'adoption', loadChildren: () => import('./pages/adoption/page-adoption.module').then(m => m.PageAdoptionModule)}
 ];
 
 @NgModule({
