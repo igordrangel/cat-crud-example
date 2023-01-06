@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "prod": "ng build --configuration production --build-optimizer",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -18,7 +19,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
-    "@catrx/ui": "^0.9.9",
+    "@catrx/ui": "^0.9.10",
     "@koalarx/utils": "^1.0.102",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
