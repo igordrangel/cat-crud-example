@@ -8,7 +8,7 @@ import { AppService } from './app.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  appConfig = this.catappService
+  appConfig = this.catAppService
     .build('PetShop', {
       autoAuth: true,
       startedPage: 'adoption',
@@ -25,7 +25,7 @@ export class AppComponent {
     .generate();
 
   constructor(
-    private catappService: CatAppService,
+    private catAppService: CatAppService,
     private appService: AppService
   ) {}
 }

@@ -4,7 +4,7 @@ import { CatServiceBase } from '@catrx/ui/common';
 import { CatTokenService } from '@catrx/ui/core';
 import { CatDatatableDataHttpResponse } from '@catrx/ui/datatable';
 import { koala } from '@koalarx/utils';
-import { first, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Credentials } from './user.interface';
 
 @Injectable({ providedIn: 'any' })
@@ -35,7 +35,7 @@ export class UserService extends CatServiceBase {
     });
   }
 
-  getDatatable(filter: any): Observable<CatDatatableDataHttpResponse<any>> {
+  getDatatable(): Observable<CatDatatableDataHttpResponse<never>> {
     throw new Error('Method not implemented.');
   }
 }

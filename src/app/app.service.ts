@@ -4,8 +4,6 @@ import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({ providedIn: 'any' })
 export class AppService {
-  constructor() {}
-
   public getMenu(decodedToken: CatAppDecodedToken) {
     return new Observable<AppConfigMenu>((observe) => {
       observe.next({

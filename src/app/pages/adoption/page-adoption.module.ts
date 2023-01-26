@@ -1,3 +1,4 @@
+import { AppPageComponent } from './../../shared/components/app-page/app-page.componnet';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CatPrimaryButtonComponent } from '@catrx/ui/button';
@@ -6,7 +7,6 @@ import { CatDatatableModule } from '@catrx/ui/datatable';
 import { CatDialogModule } from '@catrx/ui/dialog';
 import { CatFormModule } from '@catrx/ui/form';
 import { CatIconButtonModule } from '@catrx/ui/icon-button';
-import { CatToolbarModule } from '@catrx/ui/toolbar';
 import { PageAdoptionComponent } from './page-adoption.component';
 import { PageAdoptionRoutingModule } from './page-adoption.routing.module';
 
@@ -14,14 +14,14 @@ import { PageAdoptionRoutingModule } from './page-adoption.routing.module';
   declarations: [PageAdoptionComponent],
   imports: [
     CommonModule,
-    CatToolbarModule,
+    AppPageComponent,
     CatFormModule,
     CatDatatableModule,
     CatDialogModule,
     CatConfirmModule,
     CatIconButtonModule,
     CatPrimaryButtonComponent,
-    PageAdoptionRoutingModule,
+    PageAdoptionRoutingModule
   ],
 })
 export class PageAdoptionModule {}

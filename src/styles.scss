@@ -1,9 +1,40 @@
 :root,
 main {
-  --c-menu: #1E88E5;
-  --c-menu-hover: #1976D2;
-  --c-menu-active: #1565C0;
+  --purple-100: #D1C4E9;
+  --purple-500: #673AB7;
+  --purple-600: #5E35B1;
+  --purple-700: #512DA8;
+
+  --danger: #D32F2F;
+
+  --c-menu: var(--purple-500);
+  --c-menu-hover: var(--purple-600);
+  --c-menu-active: var(--purple-700);
   --bg-menu: #E3F2FD;
   --bg-menu-hover: #BBDEFB;
   --bg-menu-active: #90CAF9;
+
+  --btn-icon-bg-default: transparent;
+  --btn-icon-c-default: var(--purple-500);
+
+  --btn-bg-primary: var(--purple-500);
+  --btn-bg-primary-hover: var(--purple-600);
+  --btn-bg-primary-active: var(--purple-700);
+
+  --c-toolbar: var(--purple-500);
+
+  --bg-tooltip: var(--purple-500);
+
+  --primary-color: var(--purple-500);
+
+  --c-datatable-th: var(--purple-500);
+  --border-color-datatable-th: #f1f1f1;
+}
+
+main.dark {
+  --btn-bg-primary: var(--purple-500);
+  --btn-bg-primary-hover: var(--purple-600);
+  --btn-bg-primary-active: var(--purple-700);
+
+  --bg-datatable-th: rgba(0,0,0,.2);
 }

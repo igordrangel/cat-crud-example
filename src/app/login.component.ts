@@ -53,7 +53,7 @@ export class LoginComponent
 
   loginFormConfig = this.formService
     .build<Credentials>()
-    .text('Usuário', 'username', (builder) => builder.setRequired().generate())
+    .text('Usuário', 'username', (builder) => builder.focus().setRequired().generate())
     .password('Senha', 'password', (builder) =>
       builder.setRequired().generate()
     )
