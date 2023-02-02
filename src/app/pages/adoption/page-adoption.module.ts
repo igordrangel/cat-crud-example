@@ -1,7 +1,7 @@
 import { AppPageComponent } from './../../shared/components/app-page/app-page.componnet';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { CatPrimaryButtonComponent } from '@catrx/ui/button';
+import { CatPrimaryButtonComponent } from '@catrx/ui/button/primary';
 import { CatConfirmModule } from '@catrx/ui/confirm';
 import { CatDatatableModule } from '@catrx/ui/datatable';
 import { CatDialogModule } from '@catrx/ui/dialog';

@@ -7,9 +7,9 @@ import { CatDialogService } from '@catrx/ui/dialog';
 import { CatLoaderPageService } from '@catrx/ui/loader-page';
 import { CatSnackbarService } from '@catrx/ui/snackbar';
 import { CatConfirmService } from '@catrx/ui/confirm';
-import { CatXlsxService } from '@catrx/ui/utils';
+import { CatXlsxService } from '@catrx/ui/utils/xlsx';
 import { PetSexOptions, Pet } from '../../shared/services/adoption/adoption.interface';
-import { koala } from '@koalarx/utils';
+import { klArray } from '@koalarx/utils/operators/array';
 
 @Component({
   templateUrl: './page-adoption.component.html',
@@ -29,8 +29,7 @@ export class PageAdoptionComponent extends CatCRUDComponentBase {
     .select('Sexo', 'sex', (builder) =>
       builder
         .setOptions(
-          koala([{ value: '', name: 'Todos' }])
-            .array<CatFormListOptions>()
+          klArray<CatFormListOptions>([{ value: '', name: 'Todos' }])
             .merge(PetSexOptions)
             .getValue()
         )

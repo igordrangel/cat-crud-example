@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CatLogotypeApp } from '@catrx/ui/core';
+import { CatLogotypeApp } from '@catrx/ui';
 import { CatFormModule, CatFormService } from '@catrx/ui/form';
-import { CatPrimaryButtonComponent } from '@catrx/ui/button';
+import { CatPrimaryButtonComponent } from '@catrx/ui/button/primary';
 import {
   CatDynamicComponentDataInterface,
   CatDynamicComponentModule,

@@ -35,11 +35,13 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-              "@koalarx/utils",
-              "@koalarx/utils/operators/delay",
-              "@koalarx/utils/operators/string",
+              "b64-to-blob",
               "jwt-encode",
-              "@koalarx/utils/operators"
+              "papaparse/papaparse.min.js",
+              "@koalarx/utils/operators/array",
+              "@koalarx/utils/operators/delay",
+              "@koalarx/utils/operators/object",
+              "@koalarx/utils/operators/string"
             ]
           },
           "configurations": {
@@ -47,8 +49,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "6mb",
-                  "maximumError": "8mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",

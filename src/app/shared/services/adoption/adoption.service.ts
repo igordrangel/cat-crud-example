@@ -1,10 +1,11 @@
+import { klArray } from '@koalarx/utils/operators/array';
 import { Injectable } from '@angular/core';
 import { CatServiceBase } from '@catrx/ui/common';
 import { HttpClient } from '@angular/common/http';
 import { CatDatatableDataHttpResponse } from '@catrx/ui/datatable';
-import { map, Observable } from 'rxjs';
 import { PetFilter, Pet } from './adoption.interface';
-import { koala } from '@koalarx/utils';
+import { Observable } from 'rxjs/internal/Observable';
+import { map } from 'rxjs/internal/operators/map';
 
 @Injectable({ providedIn: 'root' })
 export class AdoptionService extends CatServiceBase<
@@ -34,8 +35,7 @@ export class AdoptionService extends CatServiceBase<
     filter: PetFilter
   ): Observable<CatDatatableDataHttpResponse<Pet>> {
     return this.getAll().pipe(map((petsBase) => {
-      const pets = koala(petsBase)
-        .array<Pet>()
+      const pets = klArray(petsBase)
         .filter(filter?.race ?? '', 'race')
         .filter(filter?.sex ?? '', 'sex')
         .getValue();

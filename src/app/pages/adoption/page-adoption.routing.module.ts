@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-import { CatAuthGuard } from '@catrx/ui/core';
+import { CatAuthGuard } from '@catrx/ui';
 import { PageAdoptionComponent } from './page-adoption.component';
 import { NgModule } from '@angular/core';
 
